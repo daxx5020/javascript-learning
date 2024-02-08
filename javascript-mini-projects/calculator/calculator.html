@@ -9,13 +9,13 @@
     <input
       class="num1"
       id="num1"
-      type="number"
+      type="text"
       placeholder="Please enter a number"
     />
     <input
       class="num2"
       id="num2"
-      type="number"
+      type="text"
       placeholder="Please enter a number"
     />
     <br/>
@@ -32,55 +32,38 @@
 </html>
 
 <script>
-  const sum = () => {
-    num1Data = document.getElementById("num1");
-    num1 = parseInt(num1Data.value);
 
-    num2Data = document.getElementById("num2");
-    num2 = parseInt(num2Data.value);
+let getnum1 = ()=>{
+    return parseInt(document.getElementById("num1").value);
+}
 
-    let sum = num1 + num2;
-    let maindiv = document.getElementById("answer");
-    maindiv.innerText = "";
-    maindiv.innerText += sum;
-  };
+let getnum2 = ()=>{
+    return parseInt(document.getElementById("num2").value);
+}
 
-  const substraction = () => {
-    num1Data = document.getElementById("num1");
-    num1 = parseInt(num1Data.value);
+let answer = (result) =>{
+  return document.getElementById("answer").innerHTML = "Answer: " + result;
+}
 
-    num2Data = document.getElementById("num2");
-    num2 = parseInt(num2Data.value);
+let sum = () =>{
+  let sum = getnum1() + getnum2();
+  answer(sum);
+}
 
-    let substraction = num1 - num2;
-    let maindiv = document.getElementById("answer");
-    maindiv.innerText = "";
-    maindiv.innerText += substraction;
-  };
+let substraction = () =>{
+  let substraction = getnum1() - getnum2();
+  answer(substraction);
+}
 
-  const multiplication = () => {
-    num1Data = document.getElementById("num1");
-    num1 = parseInt(num1Data.value);
+let multiplication = () =>{
+  let multiplication = getnum1() * getnum2();
+  answer(multiplication);
+}
 
-    num2Data = document.getElementById("num2");
-    num2 = parseInt(num2Data.value);
+let division = () =>{
+  let division = getnum1() / getnum2();
+  answer(division);
+}
 
-    let multiplication = num1 * num2;
-    let maindiv = document.getElementById("answer");
-    maindiv.innerText = "";
-    maindiv.innerText += multiplication;
-  };
 
-  const division = () => {
-    num1Data = document.getElementById("num1");
-    num1 = parseInt(num1Data.value);
-
-    num2Data = document.getElementById("num2");
-    num2 = parseInt(num2Data.value);
-
-    let division = num1 / num2;
-    let maindiv = document.getElementById("answer");
-    maindiv.innerText = "";
-    maindiv.innerText += division;
-  };
 </script>
