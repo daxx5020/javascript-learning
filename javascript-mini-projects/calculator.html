@@ -33,6 +33,7 @@
 
 <script>
 
+
 let getnum1 = ()=>{
     return parseInt(document.getElementById("num1").value);
 }
@@ -40,6 +41,8 @@ let getnum1 = ()=>{
 let getnum2 = ()=>{
     return parseInt(document.getElementById("num2").value);
 }
+
+if (getnum1() && getnum2() != "" ){
 
 let answer = (result) =>{
   return document.getElementById("answer").innerHTML = "Answer: " + result;
@@ -64,6 +67,9 @@ let division = () =>{
   let division = getnum1() / getnum2();
   answer(division);
 }
+}
 
-
+else{
+  alert("enter a valid number")
+}
 </script>
